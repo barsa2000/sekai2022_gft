@@ -766,8 +766,8 @@ log.info(output)
 ### run the exploit
 
 1. Build the program with `cargo build-bpf`
-2.1. run `python solve.py` to run it on a local instance of the server
-2.2. run `python solve.py HOST=<server_addr> PORT=<server_port>` to run it against the real server
+    2.1. run `python solve.py` to run it on a local instance of the server
+    2.2. run `python solve.py HOST=<server_addr> PORT=<server_port>` to run it against the real server
 
 The output should look something like this:
 
