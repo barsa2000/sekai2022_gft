@@ -18,10 +18,6 @@ io.recvuntil(b"program: ").decode("ascii")
 program = PublicKey(io.recvline().strip().decode())
 log.info(f"program: {program}")
 
-# io.recvuntil(b"admin: ").decode("ascii")
-# admin = PublicKey(io.recvline().strip().decode())
-# log.info(f"admin: {admin}")
-
 io.recvuntil(b"user: ").decode("ascii")
 user = PublicKey(io.recvline().strip().decode("ascii"))
 log.info(f"user: {user}")
@@ -49,22 +45,15 @@ log.info(f"character: {character}")
 vault, vault_bump = PublicKey.find_program_address([b"VAULT"], program)
 log.info(f"vault: {vault}")
 
-# config, config_bump = PublicKey.find_program_address([b"CONFIG"], program)
-# log.info(f"config: {config}")
-
 accounts = [
     (b"ws", user.to_base58()),
     (b"q", program.to_base58()),
-    # (b"w", admin.to_base58()),
     (b"w", character.to_base58()),
     (b"w", useraccount.to_base58()),
     (b"w", vault.to_base58()),
-    # (b"w", config.to_base58()),
     (b"q", SYS_PROGRAM_ID.to_base58()),
 ]
 
-# log.info(f"accounts: {accounts}")
-# ix_data = p8(beachside_bump_seed) + p8(kek_bump_seed) + p8(vault_bump_seed)
 ix_data = p8(vault_bump)
 
 io.recvuntil(b"num accounts:").decode("ascii")
