@@ -767,8 +767,8 @@ log.info(output)
 
 1. Build the program with `cargo build-bpf`
 2. Run the solve script:
-    a. run `python solve.py` to run it on a local instance of the server
-    a. run `python solve.py HOST=<server_addr> PORT=<server_port>` to run it against the real server
+    - run `python solve.py` to run it on a local instance of the server
+    - run `python solve.py HOST=<server_addr> PORT=<server_port>` to run it against the real server
 
 The output should look something like this:
 
